@@ -18,3 +18,6 @@ MAX_OUTPUT_TOKENS = 2000
 
 # System prompt token size
 SYSTEM_PROMPT_LENGTH = 400
+
+# Max links to extract and scrape
+MAX_LINKS_TO_SCRAPE = 400
