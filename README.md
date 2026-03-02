@@ -1,0 +1,107 @@
+# SEO keyword identification using AI
+
+## Overview
+
+This app uses extracted HTML documents with AI to find relevant SEO keywords about a given website.
+Generated keywords could be helpful in SEO strategy planning or research.
+You can also use them to find relevant webpages in any search engines on the internet.
+
+**Model used:** Gemini 3 Flash with context limit of **1 million tokens**.
+
+A live version of the application can be found on [Streamlit Community Cloud](https://vse-app.streamlit.app/).
+
+**For more details, continue reading below.**
+
+---
+
+## How to use - step by step
+
+1. Enter your [Gemini API key](https://aistudio.google.com/app/apikey)🔑
+2. Paste a full valid URL link to scrape HTMLs and click on **"Extract HTML documents"** 📄
+3. Set your desired parameters with sliders to modify keyword generation (recommended to leave at default)🎚️
+4. Generate keywords - every keyword generation may incur costs! Check Read me for more information.🧠
+5. Select keywords (recommended to have 5-10 keywords selected)📝
+6. Click on **"Search in browser"** to search for similar websites using google
+   OR enter your ScrapingBee API key and click on **"Search with Scrapingbee"** to obtain links from Google Search results immediately.🔍
+
+⚠️ **Please, read about Usage below for important informations** ⚠️
+
+---
+
+## Usage
+
+**Always let processes to finish before interacting with other components.**
+
+Enter a full URL in format https://www.example.com.
+
+Some website might have **anti-bot measurements**, which **block bots** from visiting their webpages. Therefore the program **won't** be able to extract HTML documents from protected websites.
+
+If there's a connection error during extraction or it mentions that the **content might be blocked**, use a different URL.
+
+Similarly, since API calls are made to generate SEO keywords, they can often result in errors from server side.
+If an error occurs, you can check this official site for more information [Gemini API error codes](https://ai.google.dev/gemini-api/docs/troubleshooting).
+
+Currently, there's an error with vietnamese language not being output correctly. There may be mistakes if you choose to generate keywords in vietnamese.
+
+---
+
+### 🔑 **Gemini API key**
+
+API key is used to obtain SEO keywords from AI.
+
+For limited free usage, use a **free Gemini API key** from:  
+[https://aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey)
+
+---
+
+### 🔑 **(Optional) ScrapingBee API key**
+
+ScrapingBee API key is used to obtain links of Google Search results.
+
+For limited free usage, use a **free ScrapingBee API key** from:  
+[https://scrapingbee.com/](https://scrapingbee.com/)
+
+---
+
+### 📄 **Extracting HTML Documents**
+
+Make sure to enter your Gemini API key before extracting. It is used free of cost during extraction to calculate token length of HTML documents.
+
+When you click on **"Extract HTML documents"**, the app will extract internal links from the provided URL.
+
+It will then attempt to extract **desired number of HTML documents** from the **most frequently mentioned** internal links, preferably selecting those with **shorter URL paths** to obtain varied informations.
+
+When the model token limit is exceeded, the app will reduce the number of HTML documents used for keyword generation.
+
+⚠️ **Reminder:** Extraction takes longer with higher number of HTML documents needed to extract. (up to 1 minute)
+Extractions are affected by the website's response speed as well. Depending on their speed, the extraction can take longer than 1 minute.
+
+---
+
+### 🧠 **Generating Keywords**
+
+After a successful HTML extraction, the option to **generate keywords** will become available.
+
+You can customize your keyword generation with the following parameters:
+
+- **Temperature** (controls creativity)
+- **Presence penalty** (controls variety)
+- **Language** of the generated keywords
+- **Number of keywords** to generate
+
+The app uses the **extracted HTML documents** as context in the prompt to generate **SEO optimized keywords**.
+
+> ⚠️ **Reminder:** Generating keywords consumes tokens and may incur costs, depending on what API key is used.
+> This can lead to **large token usage**, depending on the amount of HTML documents selected and their size.
+> BUG: Currently, there's an error with vietnamese language not being output correctly. There may be mistakes if you choose to generate keywords in vietnamese.
+
+---
+
+### 🔍 **Searching for Similar Websites**
+
+Generated keywords will appear as **selectable pills**.
+
+The **first 10 keywords** will be **pre-selected** and used to query Google Search.
+You can freely **select or deselect** any keywords to refine your search.
+
+Click **"Search Browser"** to open a new browser tab with **Google results based on the selected keywords**.
