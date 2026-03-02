@@ -9,7 +9,7 @@ def sidebar_guide():
         "3. Set your desired parameters with sliders to modify keyword generation (recommended to leave at default)🎚️\n"
         "4. Generate keywords - every keyword generation may incur costs! Check Read me for more information.🧠\n"
         "5. Select keywords (recommended to have 5-10 keywords selected)📝\n"
-        '6. Click on **"Search in browser"** to search for similar websites using google🔍'
+        '6. Click on **"Search in browser"** to search for similar websites using google OR enter your ScrapingBee API key and click on "Search with Scrapingbee" to obtain links from Google Search results immediately.🔍'
         '**⚠️ Please, read about Usage below for important informations**'
     )
 
@@ -59,6 +59,13 @@ def sidebar_details():
 
         ---
 
+        ### 🔑 **(Optional) ScrapingBee API key**
+        ScrapingBee API key is used to obtain links of Google Search results.
+
+        For limited free usage, use a **free ScrapingBee API key** from: [https://scrapingbee.com/](https://scrapingbee.com/)
+
+        ---
+
         ### 📄 **Extracting HTML Documents**
         Make sure to enter your Gemini API key before extracting. It is used free of cost during extraction to calculate token length of HTML documents. 
 
@@ -96,6 +103,6 @@ def sidebar_details():
         The **first 10 keywords** will be **pre-selected** and used to query Google Search.
         You can freely **select or deselect** any keywords to refine your search.
 
-        Click **"Search Browser"** to open a new browser tab with **Google results based on the selected keywords**.
+        Click **"Search Browser"** to open a new browser tab with **Google results based on the selected keywords OR enter your ScrapingBee API key and click on "Search with Scrapingbee" to obtain links from Google Search results immediately.**.
         """
     )
